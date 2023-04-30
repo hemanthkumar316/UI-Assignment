@@ -1,0 +1,26 @@
+.row{
+background: url('./Images/backGroundImage.png');
+position: absolute;
+width: 1550px;
+/* width: 1920px; */
+height: 1008px;
+left: 6px;
+top: 57px;
+}
+
+h1{
+ width: 799px;
+height: 70px;
+font-family: 'Raleway';
+font-style: normal;
+font-weight: 600;
+font-size: 56px;
+}
+h2{
+ width: 401px;
+height: 32px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+}
