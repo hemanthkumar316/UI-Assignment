@@ -1,11 +1,13 @@
 .row{
-background: url('./Images/backGroundImage.png');
-position: absolute;
-width: 1550px;
+ background-color: black;
+/* background: url('./Images/backGroundImage.png'); */
+/* position: absolute; */
+/* width: 1550px; */
 /* width: 1920px; */
-height: 1008px;
+/* height: 1008px;
 left: 6px;
-top: 57px;
+top: 57px; */
+background-position: 100px 100px;
 }
 
 h1{

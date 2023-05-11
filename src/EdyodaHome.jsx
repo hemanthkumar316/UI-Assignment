@@ -2,13 +2,18 @@ import React, { useEffect, useState } from "react";
 import "./Home.css";
 const EdyodaHome = () => {
   const [selectedPlan, setSelectedPlan] = useState("179");
+  const [click1,setClick1]=useState(false)
+  const [click2,setClick2]=useState(false)
+  const [click3,setClick3]=useState(false)
+  const [limited,setLimited]=useState(false)
+
   useEffect(() => {
     console.log(selectedPlan);
   }, [selectedPlan]);
   return (
-    <div className="container   bg-dark">
+    <div className="container-fluid ">
       <div className="row">
-        <div className="col col-md-7 p-4 mt-2">
+        <div className="col col-lg-7 p-4 mt-2">
           {/* content1 */}
           <h1 className="text-white "> Access curated courses worth</h1>
           <h1 className="text-white">
@@ -189,21 +194,21 @@ const EdyodaHome = () => {
           </div>
         </div>
         {/* content 2 */}
-        <div className="col col-md-5 mb-4">
+        <div className="col col-lg-5 mb-4">
           <form
             className="bg-white text-dark mt-4 p-3"
             style={{ width: "550px" }}
           >
             <div className="d-flex justify-content-around">
               <div className="d-inline">
-                <button className="btn btn-primary rounded-circle ml-3">
+                <button className="btn btn-primary rounded-circle ml-3" type="button">
                   1
                 </button>
                 <h5>Signup</h5>
               </div>
 
               <div className="d-inline">
-                <button className="btn btn-primary rounded-circle ml-3">
+                <button className="btn btn-primary rounded-circle ml-3" type="button">
                   2
                 </button>
                 <h5>Subscribe</h5>
@@ -215,7 +220,7 @@ const EdyodaHome = () => {
             </h3>
             {/* radio button 1 */}
             <div
-              className="d-flex justify-content-around border mb-3 border-3  bg-secondary
+              className="d-flex justify-content-around border mb-3 border-3 border  bg-secondary 
             "
             >
               {/* badge */}
@@ -235,8 +240,9 @@ const EdyodaHome = () => {
                   type="radio"
                   name="flexRadioDefault"
                   id="flexRadioDefault1"
+                  disabled
                 />
-                <label className="form-check-label" htmlFor="flexRadioDefault1">
+                <label className="form-check-label text-white" htmlFor="flexRadioDefault1">
                   12 Months Subscripton
                 </label>
               </div>
@@ -248,7 +254,7 @@ const EdyodaHome = () => {
               </div>
             </div>
             {/* radio button 2 */}
-            <div className="d-flex justify-content-around border border-success mb-3 border-3">
+            <div className={click1?'d-flex justify-content-around border-success border mb-3 border-3':'d-flex justify-content-around border border mb-3 border-3'}onClick={()=>setClick1(!click1)}>
               {/* badge */}
               <div
                 style={{
@@ -259,7 +265,7 @@ const EdyodaHome = () => {
               >
                 <span className="badge bg-success p-3 py-1">Recommended</span>
               </div>
-              <div className="form-check mt-4 mr-4 ">
+              <div className="form-check mt-4 mr-4 " >
                 <input
                   className="form-check-input"
                   type="radio"
@@ -268,6 +274,7 @@ const EdyodaHome = () => {
                   onChange={(e) => {
                     setSelectedPlan("179");
                   }}
+
                 />
                 <label className="form-check-label" htmlFor="flexRadioDefault1">
                   12 Months Subscripton
@@ -281,7 +288,7 @@ const EdyodaHome = () => {
               </div>
             </div>
             {/* radio button 3 */}
-            <div className="d-flex justify-content-around border border-3  mb-3">
+            <div className={click2?'d-flex justify-content-around border-success border mb-3 border-3':'d-flex justify-content-around border border mb-3 border-3'}onClick={()=>setClick2(!click2)}>
               <div class="form-check mt-4 mr-4">
                 <input
                   className="form-check-input"
@@ -302,7 +309,7 @@ const EdyodaHome = () => {
               </div>
             </div>
             {/* radio button 4 */}
-            <div className="d-flex justify-content-around border border-3  mb-3">
+            <div className={click3?'d-flex justify-content-around border-success border mb-3 border-3':'d-flex justify-content-around border border mb-3 border-3'}onClick={()=>setClick3(!click3)}>
               <div className="form-check mt-4 mr-4">
                 <input
                   className="form-check-input"
@@ -329,7 +336,7 @@ const EdyodaHome = () => {
             </div>
 
             {/* radio button 4 */}
-            <div className="d-flex justify-content-around border mb-4 border-3 border-danger">
+            <div className={limited?'d-flex justify-content-around border-danger border mb-3 border-3':'d-flex justify-content-around border-warning border mb-3 border-3'}onClick={()=>setLimited(!limited)}>
               <div className="form-check mt-2 mr-4 p-1">
                 <input
                   className="form-check-input"
